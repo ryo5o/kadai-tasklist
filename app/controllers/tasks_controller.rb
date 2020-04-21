@@ -15,10 +15,10 @@ class TasksController < ApplicationController
         @task = Task.new(task_params)
 
         if @task.save
-            flash[:success] = 'タスクが正常に登録されました'
+            flash = 'タスクが正常に登録されました'
             redirect_to @task
         else
-            flash.now[:danger] = 'タスクが登録できませんでした'
+            flash.now = 'タスクが登録できませんでした'
             render :new
         end
     end
@@ -47,8 +47,10 @@ class TasksController < ApplicationController
         flash = 'タスク は正常に削除されました'
         redirect_to tasks_url
     end
+    
+    private
 
-# Strong Parameter
+    # Strong Parameter
     def task_params
         params.require(:task).permit(:content)
     end
