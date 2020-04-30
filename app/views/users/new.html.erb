@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>サインアップ</h1>
 
 <%= form_with(model: @user, local: true) do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
@@ -17,3 +17,5 @@
 
   <%= f.submit 'Sign up' %>
 <% end %>
+
+<p>ログインはこちらから<%= link_to 'Login now!', login_url %><p>
